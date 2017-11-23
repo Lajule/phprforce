@@ -1,0 +1,26 @@
+{
+    "name": "lajule/phprforce",
+    "description": "Interact with Salesforce from PHP",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Julien Rouzieres",
+            "email": "julien.rouzieres@mac.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "guzzlehttp/guzzle": "^6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "PHPRForce\\": "src"
+        }
+    },
+    "scripts": {
+        "test": "phpunit tests"
+    }
+}
