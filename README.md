@@ -161,4 +161,21 @@ $result = $conn->batch()->execute([
 ]);
 ```
 
+### Chatter
+
+Access to Chatter API resources.
+
+#### chatter.php
+
+```php
+<?php
+
+use PHPRForce\Connexion;
+
+session_start();
+
+$conn = new Connexion($_SESSION['config']);
+$resource = $conn->chatter('/users/me')->retrieve();
+```
+
 [1]: https://github.com/guzzle/guzzle (Guzzle, an extensible PHP HTTP client)
