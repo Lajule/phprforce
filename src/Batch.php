@@ -20,7 +20,7 @@ final class Batch
     public function execute(array $json): array
     {
         $url = $this->config['instance_url']
-            . '/services/data/' . self::API_VERSION . '/composite/batch';
+            .'/services/data/'.self::API_VERSION.'/composite/batch';
         $headers = [
             'Authorization' => "Bearer {$this->config['access_token']}"
         ];

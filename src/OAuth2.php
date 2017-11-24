@@ -17,17 +17,17 @@ final class OAuth2
 
     public function redirect(): void
     {
-        $url = getenv('LOGIN_URL') . '/services/oauth2/authorize'
-            . '?response_type=code'
-            . '&client_id=' . getenv('CLIENT_ID')
-            . '&redirect_uri=' . urlencode(getenv('REDIRECT_URI'));
+        $url = getenv('LOGIN_URL').'/services/oauth2/authorize'
+            .'?response_type=code'
+            .'&client_id='.getenv('CLIENT_ID')
+            .'&redirect_uri='.urlencode(getenv('REDIRECT_URI'));
 
         header("Location: $url");
     }
 
     public function authorize(string $code): array
     {
-        $url = getenv('LOGIN_URL') . '/services/oauth2/token';
+        $url = getenv('LOGIN_URL').'/services/oauth2/token';
         $form_params = [
             'code'          => $code,
             'grant_type'    => 'authorization_code',
@@ -46,7 +46,7 @@ final class OAuth2
         string $password,
         string $securityToken
     ): array {
-        $url = getenv('LOGIN_URL') . '/services/oauth2/token';
+        $url = getenv('LOGIN_URL').'/services/oauth2/token';
         $form_params = [
             'grant_type'    => 'password',
             'client_id'     => getenv('CLIENT_ID'),
@@ -62,7 +62,7 @@ final class OAuth2
 
     public function refresh(): array
     {
-        $url = getenv('LOGIN_URL') . '/services/oauth2/token';
+        $url = getenv('LOGIN_URL').'/services/oauth2/token';
         $form_params = [
             'grant_type'    => 'refresh_token',
             'client_id'     => getenv('CLIENT_ID'),
@@ -77,7 +77,7 @@ final class OAuth2
 
     public function revoke(): void
     {
-        $url = getenv('LOGIN_URL') . '/services/oauth2/revoke';
+        $url = getenv('LOGIN_URL').'/services/oauth2/revoke';
         $form_params = ['token' => $this->config['access_token']];
 
         $this->client->post($url, ['form_params' => $form_params]);

@@ -22,8 +22,7 @@ final class SObject
     public function create(array $json): array
     {
         $url = $this->config['instance_url']
-            . '/services/data/' . self::API_VERSION
-            . "/sobjects/{$this->type}";
+            .'/services/data/'.self::API_VERSION."/sobjects/{$this->type}";
         $headers = [
             'Authorization' => "Bearer {$this->config['access_token']}"
         ];
@@ -42,8 +41,7 @@ final class SObject
     public function get(string $id): array
     {
         $url = $this->config['instance_url']
-            . '/services/data/' . self::API_VERSION
-            . "/sobjects/{$this->type}/$id";
+            .'/services/data/'.self::API_VERSION."/sobjects/{$this->type}/$id";
         $headers = [
             'Authorization' => "Bearer {$this->config['access_token']}"
         ];
@@ -56,8 +54,7 @@ final class SObject
     public function update(string $id, array $json): void
     {
         $url = $this->config['instance_url']
-            . '/services/data/' . self::API_VERSION
-            . "/sobjects/{$this->type}/$id";
+            .'/services/data/'.self::API_VERSION."/sobjects/{$this->type}/$id";
         $headers = [
             'Authorization' => "Bearer {$this->config['access_token']}"
         ];
@@ -68,8 +65,7 @@ final class SObject
     public function delete(string $id): void
     {
         $url = $this->config['instance_url']
-            . '/services/data/' . self::API_VERSION
-            . "/sobjects/{$this->type}/$id";
+            .'/services/data/'.self::API_VERSION."/sobjects/{$this->type}/$id";
         $headers = [
             'Authorization' => "Bearer {$this->config['access_token']}"
         ];
@@ -80,8 +76,8 @@ final class SObject
     public function describe(): array
     {
         $url = $this->config['instance_url']
-            . '/services/data/' . self::API_VERSION
-            . "/sobjects/{$this->type}/describe";
+            .'/services/data/'.self::API_VERSION
+            ."/sobjects/{$this->type}/describe";
         $headers = [
             'Authorization' => "Bearer {$this->config['access_token']}"
         ];

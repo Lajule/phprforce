@@ -20,7 +20,7 @@ final class Search
     public function execute(string $q): array
     {
         $url = $this->config['instance_url']
-            . '/services/data/' . self::API_VERSION . '/search';
+            .'/services/data/'.self::API_VERSION.'/search';
         $headers = [
             'Authorization' => "Bearer {$this->config['access_token']}"
         ];

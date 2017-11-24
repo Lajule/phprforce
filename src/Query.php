@@ -20,8 +20,8 @@ final class Query
     public function execute(string $q, bool $all = false): array
     {
         $url = $this->config['instance_url']
-            . '/services/data/' . self::API_VERSION
-            . ($all ? '/queryAll' : '/query');
+            .'/services/data/'.self::API_VERSION
+            .($all ? '/queryAll' : '/query');
         $headers = [
             'Authorization' => "Bearer {$this->config['access_token']}"
         ];
@@ -39,7 +39,7 @@ final class Query
 
     public function nextRecords(string $nextRecordsUrl): array
     {
-        $url = $this->config['instance_url'] . $nextRecordsUrl;
+        $url = "{$this->config['instance_url']}$nextRecordsUrl";
         $headers = [
             'Authorization' => "Bearer {$this->config['access_token']}"
         ];

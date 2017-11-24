@@ -22,8 +22,7 @@ final class Chatter
     public function retrieve(array $query = []): array
     {
         $url = $this->config['instance_url']
-            . '/services/data/' . self::API_VERSION . '/chatter'
-            . $this->resource;
+            .'/services/data/'.self::API_VERSION."/chatter{$this->resource}";
         $headers = [
             'Authorization' => "Bearer {$this->config['access_token']}"
         ];
@@ -42,8 +41,7 @@ final class Chatter
     public function create(array $json): array
     {
         $url = $this->config['instance_url']
-            . '/services/data/' . self::API_VERSION . '/chatter'
-            . $this->resource;
+            .'/services/data/'.self::API_VERSION."/chatter{$this->resource}";
         $headers = [
             'Authorization' => "Bearer {$this->config['access_token']}"
         ];
