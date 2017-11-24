@@ -23,11 +23,6 @@ final class OAuth2Test extends TestCase
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
 
-        $_ENV['LOGIN_URL'] = 'LOGIN_URL';
-        $_ENV['CLIENT_ID'] = 'CLIENT-ID';
-        $_ENV['CLIENT_SECRET'] = 'CLIENT-SECRET';
-        $_ENV['REDIRECT_URI'] = 'REDIRECT-URI';
-
         $auth = new OAuth2($client);
 
         $this->assertEquals($auth->authorize('CODE'), $expected);
@@ -43,10 +38,6 @@ final class OAuth2Test extends TestCase
 
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
-
-        $_ENV['LOGIN_URL'] = 'LOGIN_URL';
-        $_ENV['CLIENT_ID'] = 'CLIENT-ID';
-        $_ENV['CLIENT_SECRET'] = 'CLIENT-SECRET';
 
         $auth = new OAuth2($client);
 
@@ -67,10 +58,6 @@ final class OAuth2Test extends TestCase
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
 
-        $_ENV['LOGIN_URL'] = 'LOGIN_URL';
-        $_ENV['CLIENT_ID'] = 'CLIENT-ID';
-        $_ENV['CLIENT_SECRET'] = 'CLIENT-SECRET';
-
         $auth = new OAuth2($client, ['refresh_token' => 'REFRESH-TOKEN']);
 
         $this->assertEquals($auth->refresh(), $expected);
@@ -83,14 +70,10 @@ final class OAuth2Test extends TestCase
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
 
-        $_ENV['LOGIN_URL'] = 'LOGIN_URL';
-        $_ENV['CLIENT_ID'] = 'CLIENT-ID';
-        $_ENV['CLIENT_SECRET'] = 'CLIENT-SECRET';
-
         $auth = new OAuth2($client, ['access_token' => 'ACCESS-TOKEN']);
 
         $auth->revoke();
-        $this->assertTRUE(TRUE);
+        $this->assertTRUE(true);
     }
 
     public function testShouldReturnIdentity(): void

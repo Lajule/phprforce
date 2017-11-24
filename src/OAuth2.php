@@ -1,6 +1,5 @@
 <?php
 declare(strict_types=1);
-
 namespace PHPRForce;
 
 use GuzzleHttp\Client;
@@ -39,7 +38,7 @@ final class OAuth2
 
         $response = $this->client->post($url, ['form_params' => $form_params]);
 
-        return json_decode((string) $response->getBody(), TRUE);
+        return json_decode((string) $response->getBody(), true);
     }
 
     public function login(
@@ -58,7 +57,7 @@ final class OAuth2
 
         $response = $this->client->post($url, ['form_params' => $form_params]);
 
-        return json_decode((string) $response->getBody(), TRUE);
+        return json_decode((string) $response->getBody(), true);
     }
 
     public function refresh(): array
@@ -73,7 +72,7 @@ final class OAuth2
 
         $response = $this->client->post($url, ['form_params' => $form_params]);
 
-        return json_decode((string) $response->getBody(), TRUE);
+        return json_decode((string) $response->getBody(), true);
     }
 
     public function revoke(): void
@@ -93,6 +92,6 @@ final class OAuth2
 
         $response = $this->client->get($url, ['headers' => $headers]);
 
-        return json_decode((string) $response->getBody(), TRUE);
+        return json_decode((string) $response->getBody(), true);
     }
 }

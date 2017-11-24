@@ -1,6 +1,5 @@
 <?php
 declare(strict_types=1);
-
 namespace PHPRForce;
 
 use GuzzleHttp\Client;
@@ -37,7 +36,7 @@ final class SObject
             ]
         );
 
-        return json_decode((string) $response->getBody(), TRUE);
+        return json_decode((string) $response->getBody(), true);
     }
 
     public function get(string $id): array
@@ -51,7 +50,7 @@ final class SObject
 
         $response = $this->client->get($url, ['headers' => $headers]);
 
-        return json_decode((string) $response->getBody(), TRUE);
+        return json_decode((string) $response->getBody(), true);
     }
 
     public function update(string $id, array $json): void
@@ -88,6 +87,6 @@ final class SObject
         ];
         $response = $this->client->get($url, ['headers' => $headers]);
 
-        return json_decode((string) $response->getBody(), TRUE);
+        return json_decode((string) $response->getBody(), true);
     }
 }

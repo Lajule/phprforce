@@ -1,6 +1,5 @@
 <?php
 declare(strict_types=1);
-
 namespace PHPRForce;
 
 use GuzzleHttp\Client;
@@ -18,7 +17,7 @@ final class Query
         $this->config = $config;
     }
 
-    public function execute(string $q, bool $all = FALSE): array
+    public function execute(string $q, bool $all = false): array
     {
         $url = $this->config['instance_url']
             . '/services/data/' . self::API_VERSION
@@ -35,7 +34,7 @@ final class Query
             ]
         );
 
-        return json_decode((string) $response->getBody(), TRUE);
+        return json_decode((string) $response->getBody(), true);
     }
 
     public function nextRecords(string $nextRecordsUrl): array
@@ -47,6 +46,6 @@ final class Query
 
         $response = $this->client->get($url, ['headers' => $headers]);
 
-        return json_decode((string) $response->getBody(), TRUE);
+        return json_decode((string) $response->getBody(), true);
     }
 }

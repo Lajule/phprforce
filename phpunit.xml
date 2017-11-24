@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit colors="true">
+    <testsuites>
+        <testsuite name="PHPRForce Test Suite">
+            <directory suffix="Test.php">./tests</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <env name="LOGIN_URL" value="LOGIN-URL"/>
+        <env name="CLIENT_ID" value="CLIENT-ID"/>
+        <env name="CLIENT_SECRET" value="CLIENT-SECRET"/>
+        <env name="REDIRECT_URI" value="REDIRECT-URI"/>
+    </php>
+</phpunit>

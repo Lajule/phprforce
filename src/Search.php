@@ -1,6 +1,5 @@
 <?php
 declare(strict_types=1);
-
 namespace PHPRForce;
 
 use GuzzleHttp\Client;
@@ -34,6 +33,6 @@ final class Search
             ]
         );
 
-        return json_decode((string) $response->getBody(), TRUE);
+        return json_decode((string) $response->getBody(), true);
     }
 }

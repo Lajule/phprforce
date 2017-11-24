@@ -17,10 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "PHPRForce\\": "src"
+            "PHPRForce\\": "src/"
         }
-    },
-    "scripts": {
-        "test": "phpunit tests"
     }
 }

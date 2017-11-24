@@ -1,6 +1,5 @@
 <?php
 declare(strict_types=1);
-
 namespace PHPRForce;
 
 use GuzzleHttp\Client;
@@ -37,7 +36,7 @@ final class Chatter
             ]
         );
 
-        return json_decode((string) $response->getBody(), TRUE);
+        return json_decode((string) $response->getBody(), true);
     }
 
     public function create(array $json): array
@@ -57,6 +56,6 @@ final class Chatter
             ]
         );
 
-        return json_decode((string) $response->getBody(), TRUE);
+        return json_decode((string) $response->getBody(), true);
     }
 }

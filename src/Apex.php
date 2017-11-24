@@ -1,6 +1,5 @@
 <?php
 declare(strict_types=1);
-
 namespace PHPRForce;
 
 use GuzzleHttp\Client;
@@ -33,7 +32,7 @@ final class Apex
             ]
         );
 
-        return json_decode((string) $response->getBody(), TRUE);
+        return json_decode((string) $response->getBody(), true);
     }
 
     public function post(array $json = []): array
@@ -51,7 +50,7 @@ final class Apex
             ]
         );
 
-        return json_decode((string) $response->getBody(), TRUE);
+        return json_decode((string) $response->getBody(), true);
     }
 
     public function put(array $json = []): void
