@@ -52,7 +52,7 @@ final class OAuth2
             'client_id'     => getenv('CLIENT_ID'),
             'client_secret' => getenv('CLIENT_SECRET'),
             'username'      => $username,
-            'password'      => $password + $securityToken
+            'password'      => "$password$securityToken"
         ];
 
         $response = $this->client->post($url, ['form_params' => $form_params]);

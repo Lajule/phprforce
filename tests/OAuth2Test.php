@@ -42,7 +42,7 @@ final class OAuth2Test extends TestCase
         $auth = new OAuth2($client);
 
         $this->assertEquals(
-            $auth->authorize('USERNAME', 'PASSWORD', 'SECURITY-TOKEN'),
+            $auth->login('USERNAME', 'PASSWORD', 'SECURITY-TOKEN'),
             $expected
         );
     }
