@@ -15,14 +15,12 @@ final class OAuth2
         $this->config = $config;
     }
 
-    public function redirect(): void
+    public function redirect(): string
     {
-        $url = getenv('LOGIN_URL').'/services/oauth2/authorize'
+        return getenv('LOGIN_URL').'/services/oauth2/authorize'
             .'?response_type=code'
             .'&client_id='.getenv('CLIENT_ID')
             .'&redirect_uri='.urlencode(getenv('REDIRECT_URI'));
-
-        header("Location: $url");
     }
 
     public function authorize(string $code): array
