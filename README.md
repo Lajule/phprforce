@@ -50,9 +50,7 @@ API.
 ```php
 <?php
 
-use PHPRForce\Connexion;
-
-$conn = new Connexion();
+$conn = new PHPRForce\Connexion();
 $conn->auth()->redirect();
 ```
 
@@ -61,11 +59,9 @@ $conn->auth()->redirect();
 ```php
 <?php
 
-use PHPRForce\Connexion;
-
 session_start();
 
-$conn = new Connexion();
+$conn = new PHPRForce\Connexion();
 $_SESSION['config'] = $conn->auth()->authorize($_GET['code']);
 ```
 
@@ -78,11 +74,9 @@ Fetch Salesforce records with SOQL queries.
 ```php
 <?php
 
-use PHPRForce\Connexion;
-
 session_start();
 
-$conn = new Connexion($_SESSION['config']);
+$conn = new PHPRForce\Connexion($_SESSION['config']);
 $accounts = $conn->query()->execute('SELECT Id, Name FROM Account');
 ```
 
@@ -95,11 +89,9 @@ $accounts = $conn->query()->execute('SELECT Id, Name FROM Account');
 ```php
 <?php
 
-use PHPRForce\Connexion;
-
 session_start();
 
-$conn = new Connexion($_SESSION['config']);
+$conn = new PHPRForce\Connexion($_SESSION['config']);
 $account = $conn->sobject('Account')->get($_GET['Id']);
 ```
 
@@ -112,11 +104,9 @@ Call Apex REST classes in Salesforce.
 ```php
 <?php
 
-use PHPRForce\Connexion;
-
 session_start();
 
-$conn = new Connexion($_SESSION['config']);
+$conn = new PHPRForce\Connexion($_SESSION['config']);
 $result = $conn->apex('/Action')->get();
 ```
 
@@ -129,11 +119,9 @@ Execute SOSL searches.
 ```php
 <?php
 
-use PHPRForce\Connexion;
-
 session_start();
 
-$conn = new Connexion($_SESSION['config']);
+$conn = new PHPRForce\Connexion($_SESSION['config']);
 $result = $conn->search()->get('FIND {Test}');
 ```
 
@@ -146,11 +134,9 @@ Execute up to 25 requests.
 ```php
 <?php
 
-use PHPRForce\Connexion;
-
 session_start();
 
-$conn = new Connexion($_SESSION['config']);
+$conn = new PHPRForce\Connexion($_SESSION['config']);
 $result = $conn->batch()->execute([
     'batchRequests' => [
         [
@@ -170,11 +156,9 @@ Access to Chatter API resources.
 ```php
 <?php
 
-use PHPRForce\Connexion;
-
 session_start();
 
-$conn = new Connexion($_SESSION['config']);
+$conn = new PHPRForce\Connexion($_SESSION['config']);
 $resource = $conn->chatter('/users/me')->retrieve();
 ```
 
