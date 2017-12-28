@@ -12,6 +12,18 @@ use PHPRForce\OAuth2;
 
 final class OAuth2Test extends TestCase
 {
+    public function testShouldReturnRedirectUrl(): void
+    {
+        $expected = 'LOGIN-URL/services/oauth2/authorize'
+            .'?response_type=code'
+            .'&client_id=CLIENT-ID'
+            .'&redirect_uri=REDIRECT-URI';
+
+        $auth = new OAuth2(new Client());
+
+        $this->assertEquals($auth->redirect(), $expected);
+    }
+
     public function testShouldReturnAccessTokenFromCode(): void
     {
         $expected = ['access_token' => 'ACCESS-TOKEN'];
