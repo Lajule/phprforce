@@ -18,9 +18,11 @@ final class ApexTest extends TestCase
     {
         $expected = ['field' => 'FIELD'];
 
-        $mock = new MockHandler([
-            new Response(200, [], json_encode($expected))
-        ]);
+        $mock = new MockHandler(
+            [
+                new Response(200, [], json_encode($expected))
+            ]
+        );
 
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
@@ -41,9 +43,11 @@ final class ApexTest extends TestCase
     {
         $expected = ['field' => 'FIELD'];
 
-        $mock = new MockHandler([
-            new Response(200, [], json_encode($expected))
-        ]);
+        $mock = new MockHandler(
+            [
+                new Response(200, [], json_encode($expected))
+            ]
+        );
 
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
@@ -64,9 +68,11 @@ final class ApexTest extends TestCase
     {
         $this->expectException(RequestException::class);
 
-        $mock = new MockHandler([
-            new RequestException('PUT failed', new Request('PUT', 'put'))
-        ]);
+        $mock = new MockHandler(
+            [
+                new RequestException('PUT failed', new Request('PUT', 'put'))
+            ]
+        );
 
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
@@ -87,9 +93,14 @@ final class ApexTest extends TestCase
     {
         $this->expectException(RequestException::class);
 
-        $mock = new MockHandler([
-            new RequestException('PATCH failed', new Request('PATCH', 'patch'))
-        ]);
+        $mock = new MockHandler(
+            [
+                new RequestException(
+                    'PATCH failed',
+                    new Request('PATCH', 'patch')
+                )
+            ]
+        );
 
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
@@ -110,12 +121,14 @@ final class ApexTest extends TestCase
     {
         $this->expectException(RequestException::class);
 
-        $mock = new MockHandler([
-            new RequestException(
-                'DELETE failed',
-                new Request('DELETE', 'delete')
-            )
-        ]);
+        $mock = new MockHandler(
+            [
+                new RequestException(
+                    'DELETE failed',
+                    new Request('DELETE', 'delete')
+                )
+            ]
+        );
 
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);

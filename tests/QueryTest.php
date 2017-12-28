@@ -16,9 +16,11 @@ final class QueryTest extends TestCase
     {
         $expected = ['done' => true];
 
-        $mock = new MockHandler([
-            new Response(200, [], json_encode($expected))
-        ]);
+        $mock = new MockHandler(
+            [
+                new Response(200, [], json_encode($expected))
+            ]
+        );
 
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
@@ -38,9 +40,11 @@ final class QueryTest extends TestCase
     {
         $expected = ['done' => true];
 
-        $mock = new MockHandler([
-            new Response(200, [], json_encode($expected))
-        ]);
+        $mock = new MockHandler(
+            [
+                new Response(200, [], json_encode($expected))
+            ]
+        );
 
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);

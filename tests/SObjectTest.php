@@ -18,9 +18,11 @@ final class SObjectTest extends TestCase
     {
         $expected = ['Id' => 'ID'];
 
-        $mock = new MockHandler([
-            new Response(200, [], json_encode($expected))
-        ]);
+        $mock = new MockHandler(
+            [
+                new Response(200, [], json_encode($expected))
+            ]
+        );
 
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
@@ -41,9 +43,11 @@ final class SObjectTest extends TestCase
     {
         $expected = ['Id' => 'ID'];
 
-        $mock = new MockHandler([
-            new Response(200, [], json_encode($expected))
-        ]);
+        $mock = new MockHandler(
+            [
+                new Response(200, [], json_encode($expected))
+            ]
+        );
 
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
@@ -64,12 +68,14 @@ final class SObjectTest extends TestCase
     {
         $this->expectException(RequestException::class);
 
-        $mock = new MockHandler([
-            new RequestException(
-                'Update failed',
-                new Request('PATCH', 'patch')
-            )
-        ]);
+        $mock = new MockHandler(
+            [
+                new RequestException(
+                    'Update failed',
+                    new Request('PATCH', 'patch')
+                )
+            ]
+        );
 
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
@@ -90,12 +96,14 @@ final class SObjectTest extends TestCase
     {
         $this->expectException(RequestException::class);
 
-        $mock = new MockHandler([
-            new RequestException(
-                'Delete failed',
-                new Request('DELETE', 'delete')
-            )
-        ]);
+        $mock = new MockHandler(
+            [
+                new RequestException(
+                    'Delete failed',
+                    new Request('DELETE', 'delete')
+                )
+            ]
+        );
 
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
@@ -116,9 +124,11 @@ final class SObjectTest extends TestCase
     {
         $expected = ['Id' => 'ID'];
 
-        $mock = new MockHandler([
-            new Response(200, [], json_encode($expected))
-        ]);
+        $mock = new MockHandler(
+            [
+                new Response(200, [], json_encode($expected))
+            ]
+        );
 
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);

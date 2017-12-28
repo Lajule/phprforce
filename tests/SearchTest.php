@@ -16,9 +16,11 @@ final class SearchTest extends TestCase
     {
         $expected = ['searchRecords' => 'RECORDS'];
 
-        $mock = new MockHandler([
-            new Response(200, [], json_encode($expected))
-        ]);
+        $mock = new MockHandler(
+            [
+                new Response(200, [], json_encode($expected))
+            ]
+        );
 
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);

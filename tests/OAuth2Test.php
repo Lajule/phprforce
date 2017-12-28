@@ -16,9 +16,11 @@ final class OAuth2Test extends TestCase
     {
         $expected = ['access_token' => 'ACCESS-TOKEN'];
 
-        $mock = new MockHandler([
-            new Response(200, [], json_encode($expected))
-        ]);
+        $mock = new MockHandler(
+            [
+                new Response(200, [], json_encode($expected))
+            ]
+        );
 
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
@@ -32,9 +34,11 @@ final class OAuth2Test extends TestCase
     {
         $expected = ['access_token' => 'ACCESS-TOKEN'];
 
-        $mock = new MockHandler([
-            new Response(200, [], json_encode($expected))
-        ]);
+        $mock = new MockHandler(
+            [
+                new Response(200, [], json_encode($expected))
+            ]
+        );
 
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
@@ -51,9 +55,11 @@ final class OAuth2Test extends TestCase
     {
         $expected = ['access_token' => 'ACCESS-TOKEN'];
 
-        $mock = new MockHandler([
-            new Response(200, [], json_encode($expected))
-        ]);
+        $mock = new MockHandler(
+            [
+                new Response(200, [], json_encode($expected))
+            ]
+        );
 
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
@@ -80,9 +86,11 @@ final class OAuth2Test extends TestCase
     {
         $expected = ['user_id' => 'ID'];
 
-        $mock = new MockHandler([
-            new Response(200, [], json_encode($expected))
-        ]);
+        $mock = new MockHandler(
+            [
+                new Response(200, [], json_encode($expected))
+            ]
+        );
 
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
