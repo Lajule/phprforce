@@ -67,7 +67,7 @@ $_SESSION['config'] = $conn->auth()->authorize($_GET['code']);
 
 ### Query
 
-Fetch Salesforce records with SOQL queries.
+Fetches Salesforce records with SOQL queries.
 
 #### accounts.php
 
@@ -97,7 +97,7 @@ $account = $conn->sobject('Account')->get($_GET['Id']);
 
 ### Apex
 
-Call Apex REST classes in Salesforce.
+Calls Apex REST classes in Salesforce.
 
 #### action.php
 
@@ -112,7 +112,7 @@ $result = $conn->apex('/Action')->get();
 
 ### Search
 
-Execute SOSL searches.
+Executes SOSL searches.
 
 #### search.php
 
@@ -127,7 +127,7 @@ $result = $conn->search()->get('FIND {Test}');
 
 ### Batch
 
-Execute up to 25 requests.
+Executes up to 25 requests.
 
 #### batch.php
 
